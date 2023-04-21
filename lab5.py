@@ -50,14 +50,6 @@ def delete_user_by_id(id):
     conn.close()
 
 
-def drop_function():
-    conn = sqlite3.connect('users')
-    cursor = conn.cursor()
-    cursor.execute("""drop table users""")
-    conn.commit()
-    conn.close()
-
-
 def main():
     create_table_users()
     add_user(1, 'Кристина', 'kristina@mail.ru')
@@ -68,7 +60,6 @@ def main():
     select_user_by_id(4)
     delete_user_by_id(4)
     select_users()
-    # drop_function()
 
 
 main()
